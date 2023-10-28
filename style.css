@@ -1,0 +1,94 @@
+body{
+    font-family: "Euclid Circular A","Poppins";
+}
+:root{
+    --popover-height:36px;
+}
+
+.popover{
+    position: relative;
+    height: var(--popover-height);
+    width: 60px;
+    text-align:center;
+}
+.popover > img{
+    width: var(--popover-height);
+    height: var(--popover-height);
+    border-radius: 50%;
+    transition:0.3s;
+}
+.popover > img{
+    opacity:0.65;
+}
+.menu{
+    position: absolute;
+    top: 0;
+    right: 64px;
+    width: 260px;
+    padding: 16px;
+    translate: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 50px rgb(0 0 0/16%);
+    transition:0.3s
+}
+.menu::after{
+    content:" ";
+    position: absolute;
+    top: 16px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    rotate: 45deg;
+    background: inherit;
+}
+
+.popover:hover .menu{
+    opacity: 1;
+    visibility: visible;
+    translate: 0;
+}
+
+menu header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+.menu h2{
+    margin: 0;
+    font-size: 14px;
+}
+.menu h3{
+    margin: 0;
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+.menu header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.images{
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.images::-webkit-scrollbar{display: none;}
+
+.images img{
+    scroll-snap-align: start;
+    width: 108px;
+    min-width: 108px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
